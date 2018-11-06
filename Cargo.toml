@@ -1,0 +1,12 @@
+[package]
+name = "fmt2io"
+version = "0.1.0"
+authors = ["Martin Habovstiak <martin.habovstiak@gmail.com>"]
+description = "A bridge between std::io::Write and std::fmt::Write."
+homepage = "https://github.com/Kixunil/fmt2io"
+repository = "https://github.com/Kixunil/fmt2io"
+readme = "README.md"
+keywords = ["fmt", "io", "Write", "wrapper", "bridge"]
+categories = ["rust-patterns"]
+license = "MITNFA"
+maintenance = { status = "as-is" }
