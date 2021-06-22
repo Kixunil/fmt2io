@@ -28,15 +28,21 @@ use std::{fmt, io};
 ///
 /// This function uses closure instead of directly exposing `Writer`
 /// in order to make error handling ergonomic/idiomatic.
-pub fn write<W, F>(writer: W, f: F) -> io::Result<()> where W: io::Write, F: FnOnce(&mut Writer<W>) -> fmt::Result {
+///
+/// ## Panics
+///
+/// This function panics if `writer` didn't return an error but you
+/// return `Err` from the closure. Return `Ok(Err(YourError))` to handle
+/// your own error cases.
+pub fn write<R, W, F>(writer: W, f: F) -> io::Result<R> where W: io::Write, F: FnOnce(&mut Writer<W>) -> Result<R, fmt::Error> {
     let mut writer = Writer {
         writer,
         result: Ok(()),
     };
 
-    let _ = f(&mut writer);
+    let result = f(&mut writer);
 
-    writer.result
+    writer.result.map(move |_| result.unwrap())
 }
 
 /// A bridge between `std::io::Write` and `std::fmt::Write`.
