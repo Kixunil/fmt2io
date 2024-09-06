@@ -30,13 +30,13 @@
 
 use std::{fmt, io};
 
-/// Converts given `io::Write`r to `fmt::Write`r
+/// Converts given [`io::Write`]r to [`fmt::Write`]r.
 ///
-/// The `Writer` is constructed from your `writer` which you
+/// The [`Writer`] is constructed from your `writer` which you
 /// can use to write UTF-8 data to. The function returns underlying io
 /// Error, if there has been one.
 ///
-/// This function uses closure instead of directly exposing `Writer`
+/// This function uses closure instead of directly exposing [`Writer`]
 /// in order to make error handling ergonomic/idiomatic.
 ///
 /// ## Panics
@@ -55,13 +55,13 @@ pub fn write<R, W, F>(writer: W, f: F) -> io::Result<R> where W: io::Write, F: F
     writer.result.map(move |_| result.unwrap())
 }
 
-/// A bridge between `std::io::Write` and `std::fmt::Write`.
+/// A bridge between [`std::io::Write`] and [`std::fmt::Write`].
 ///
-/// This struct provides `fmt::Write` implementation for inner
-/// writers implementing `io::Write`. It must be used within the
-/// `write()` function.
+/// This struct provides [`fmt::Write`] implementation for inner
+/// writers implementing [`io::Write`]. It must be used within the
+/// [`write()`] function.
 ///
-/// See the documentation of `write()` for more information.
+/// See the documentation of [`write()`] for more information.
 #[derive(Debug)]
 pub struct Writer<W: io::Write> {
     writer: W,
