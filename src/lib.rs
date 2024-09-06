@@ -10,9 +10,9 @@
 //! -------
 //!
 //! ```rust
-//! let mut out = Vec::new();
-//!
 //! use std::fmt::Write;
+//!
+//! let mut out = Vec::new();
 //!
 //! fmt2io::write(&mut out, |writer| write!(writer, "Hello world!")).unwrap();
 //! assert_eq!(out, "Hello world!".as_bytes());
@@ -67,9 +67,9 @@ impl<W: io::Write> fmt::Write for Writer<W> {
 mod tests {
     #[test]
     fn it_works() {
-        let mut out = Vec::new();
-
         use std::fmt::Write;
+
+        let mut out = Vec::new();
 
         ::write(&mut out, |writer| write!(writer, "Hello world!")).unwrap();
 
