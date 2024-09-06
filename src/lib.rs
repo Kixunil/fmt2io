@@ -60,6 +60,7 @@ pub fn write<R, W, F>(writer: W, f: F) -> io::Result<R> where W: io::Write, F: F
 /// `write()` function.
 ///
 /// See the documentation of `write()` for more information.
+#[derive(Debug)]
 pub struct Writer<W: io::Write> {
     writer: W,
     result: Result<(), io::Error>,
