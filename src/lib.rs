@@ -14,8 +14,10 @@
 //!
 //! let mut out = Vec::new();
 //!
-//! fmt2io::write(&mut out, |writer| write!(writer, "Hello world!")).unwrap();
+//! fmt2io::write(&mut out, |writer| write!(writer, "Hello world!"))?;
 //! assert_eq!(out, "Hello world!".as_bytes());
+//!
+//! # Ok::<(), std::io::Error>(())
 //! ```
 //!
 //! MSRV
