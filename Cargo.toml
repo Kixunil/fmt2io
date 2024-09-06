@@ -1,6 +1,6 @@
 [package]
 name = "fmt2io"
-version = "0.2.0"
+version = "1.0.0"
 authors = ["Martin Habovstiak <martin.habovstiak@gmail.com>"]
 description = "A bridge between std::io::Write and std::fmt::Write."
 repository = "https://github.com/Kixunil/fmt2io"

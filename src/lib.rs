@@ -20,6 +20,20 @@
 //! # Ok::<(), std::io::Error>(())
 //! ```
 //!
+//! Maintenance status
+//! ------------------
+//!
+//! Passively maintained/done.
+//!
+//! The crate does one thing and one thing only.
+//! It works as expected and has sensible API.
+//! It didn't need to be changed for a very long time and only had one significant code change since
+//! its creation.
+//! The other changes were purely for cleanup before 1.0 release.
+//! It's also very small so there's pretty much zero chance of bugs.
+//! Therefore I consider it done.
+//! It's not dead, there just doesn't seem to be anything that needs changing.
+//!
 //! MSRV
 //! ----
 //!
