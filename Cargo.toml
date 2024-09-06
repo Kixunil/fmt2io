@@ -9,4 +9,6 @@ readme = "README.md"
 keywords = ["fmt", "io", "Write", "wrapper", "bridge"]
 categories = ["rust-patterns"]
 license = "MITNFA"
+
+[badges]
 maintenance = { status = "as-is" }
