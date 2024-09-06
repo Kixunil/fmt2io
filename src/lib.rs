@@ -39,6 +39,8 @@ use std::{fmt, io};
 /// This function uses closure instead of directly exposing [`Writer`]
 /// in order to make error handling ergonomic/idiomatic.
 ///
+/// See the [crate-level documentation](crate) for an example.
+///
 /// ## Panics
 ///
 /// This function panics if `writer` didn't return an error but you
