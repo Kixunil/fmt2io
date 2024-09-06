@@ -14,6 +14,14 @@ This crate provides a simple `write` function which takes your `io::Write`r,
 converts it to `fmt::Write`r and provides it to your closure. This way, you
 can easily bridge the two traits and have truly generic code.
 
+MSRV
+----
+
+The minimal supported version of Rust is **1.0.0**.
+This is not a joke, the crate really doesn't require any fancy compiler features.
+However I don't object to raising the MSRV up to what's in Debian stable if some really good
+reason arises. This is highly unlikely to happen.
+
 License
 -------
 

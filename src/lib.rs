@@ -17,6 +17,14 @@
 //! fmt2io::write(&mut out, |writer| write!(writer, "Hello world!")).unwrap();
 //! assert_eq!(out, "Hello world!".as_bytes());
 //! ```
+//!
+//! MSRV
+//! ----
+//!
+//! The minimal supported version of Rust is **1.0.0**.
+//! This is not a joke, the crate really doesn't require any fancy compiler features.
+//! However I don't object to raising the MSRV up to what's in Debian stable if some really good
+//! reason arises. This is highly unlikely to happen.
 
 use std::{fmt, io};
 
@@ -36,7 +44,7 @@ use std::{fmt, io};
 /// your own error cases.
 pub fn write<R, W, F>(writer: W, f: F) -> io::Result<R> where W: io::Write, F: FnOnce(&mut Writer<W>) -> Result<R, fmt::Error> {
     let mut writer = Writer {
-        writer,
+        writer: writer,
         result: Ok(()),
     };
 
